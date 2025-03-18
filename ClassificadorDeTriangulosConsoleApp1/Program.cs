@@ -11,20 +11,58 @@
                 Console.WriteLine("       Classificador de Triângulos");
                 Console.WriteLine("____________________________________________");
 
-                Console.Write("Informe o valor do lado X: ");
-                int ladoX = Convert.ToInt32(Console.ReadLine());
+                int ladoX;
 
-                Console.Write("Informe o valor do lado X: ");
-                int ladoY = Convert.ToInt32(Console.ReadLine());
+                while (true)
+                {
+                    Console.Write("Informe o valor do lado X: ");
+                    bool conseguiuConverter = int.TryParse(Console.ReadLine(), out ladoX);
+                    if (conseguiuConverter)
+                        break;
+                }
 
-                Console.Write("Informe o valor do lado X: ");
-                int ladoZ = Convert.ToInt32(Console.ReadLine());
+                int ladoY;
+
+                while (true)
+                {
+                    Console.Write("Informe o valor do lado y: ");
+                    bool conseguiuConverter = int.TryParse(Console.ReadLine(), out ladoY);
+                    if (conseguiuConverter)
+                        break;
+                }
+
+                int ladoZ;
+
+                while (true)
+                {
+                    Console.Write("Informe o valor do lado X: ");
+                    bool conseguiuConverter = int.TryParse(Console.ReadLine(), out ladoZ);
+                    if (conseguiuConverter)
+                        break;
+                }
 
                 Console.WriteLine("____________________________________________");
                 Console.WriteLine("           Valores Informados");
                 Console.WriteLine("Lado X: " + ladoX);
                 Console.WriteLine("Lado X: " + ladoY);
                 Console.WriteLine("Lado X: " + ladoZ);
+
+                bool medidasTrianguloValidas =
+                    ladoX + ladoY > ladoZ && ladoX + ladoZ > ladoY && ladoZ + ladoY > ladoX;
+                if (medidasTrianguloValidas == true)
+                {
+                    Console.WriteLine("Triângulo é válido");
+                    string tipoTriangulo = "Não classificado";
+                    if (ladoX == ladoY && ladoY == ladoZ)
+                        tipoTriangulo = "Equilátero";
+                    else if (ladoX != ladoY && ladoY != ladoZ && ladoX != ladoZ)
+                        tipoTriangulo = "Escaleno";
+                    else
+                        tipoTriangulo = "Isóceles";
+                    Console.WriteLine($"{tipoTriangulo}");
+                }
+                else
+                    Console.WriteLine("Triângulo é inválido");
 
                 Console.WriteLine("____________________________________________");
                 Console.Write("Deseja Continuar? (s/n)");
