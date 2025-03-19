@@ -39,11 +39,11 @@ dotnet build --configuration Release
 ```
 5. Para executar o projeto compilando em tempo real
 ```
-dotnet run --project Calculadora.ConsoleApp
+dotnet run --project ClassificadorDeTriangulos.ConsoleApp
 ```
 6. Para executar o arquivo compilado, navegue até a pasta: ./Calculadora.ConsoleApp/bin/Release/net8.0/ e execute o arquivo:
 ```
-Calculdora.ConsoleApp.exe
+ClassificadorDeTriangulosConsoleApp1.exe
 ```
 
 ## ✅ Requisitos
